@@ -1,4 +1,4 @@
-with open('day-1/measurements.txt', 'r') as f:
+with open('day-1/input.txt', 'r') as f:
     arr = []
     for line in f:
         arr.append(int(line.rstrip('\n')))
