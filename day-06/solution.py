@@ -1,7 +1,8 @@
-with open('day-06/input.txt', 'r') as file:
-    file = file.read().split('\n')
+with open("day-06/input.txt", "r") as file:
+    file = file.read().split("\n")
 
-initial = list(map(int, file[0].split(',')))
+initial = list(map(int, file[0].split(",")))
+
 
 def count_fishes(state, days):
     day = 0
@@ -12,18 +13,20 @@ def count_fishes(state, days):
 
     return len(state)
 
-# print(count_fishes(initial, 18))
 
 memo = {}
+
+
 def func(state):
     total = 0
     for state in initial:
         if state in memo:
             total += memo[state]
         else:
-            result = count_fishes([state], 256)
+            result = count_fishes([state], 80)
             memo[state] = result
             total += memo[state]
     return total
+
 
 print(func(set(initial)))
